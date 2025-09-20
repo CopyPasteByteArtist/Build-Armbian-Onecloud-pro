@@ -242,14 +242,6 @@ on:
         options:
           - save
           - temp
-      builder_name:
-        description: "Set Armbian builder signature."
-        required: false
-        default: ""
-        type: choice
-        options:
-          - ophub
-          - angel
 
 env:
   TZ: Etc/UTC
@@ -352,7 +344,6 @@ jobs:
           kernel_repo: ${{ inputs.kernel_repo }}
           kernel_usage: ${{ inputs.kernel_usage }}
           armbian_fstype: ${{ inputs.armbian_fstype }}
-          builder_name: ${{ inputs.builder_name }}
 
       - name: Upload Armbian image to Release
         uses: ncipollo/release-action@main
